@@ -1,0 +1,10 @@
+emojies:
+  flag_en:
+    text: ":flag_en:"
+    emoji: '\uE106'
+  heart:
+    text: "<3"
+    emoji: "&c❤"
+  smile:
+    text: ":)"
+    emoji: "☺"
