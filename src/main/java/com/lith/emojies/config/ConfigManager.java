@@ -2,13 +2,12 @@ package com.lith.emojies.config;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import com.lith.emojies.Static;
-import com.lith.lithcore.config.MainPlugin;
-import com.lith.lithcore.config.PluginConfigManager;
+import com.lith.lithcore.abstractClasses.MainPlugin;
+import com.lith.lithcore.abstractClasses.PluginConfigManager;
 
-@SuppressWarnings("deprecation")
 public class ConfigManager extends PluginConfigManager {
     private Map<String, String> emojies;
 
