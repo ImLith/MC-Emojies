@@ -2,7 +2,7 @@ package com.lith.emojies;
 
 import com.lith.emojies.config.ConfigManager;
 import com.lith.emojies.events.player.PlayerChat;
-import com.lith.lithcore.config.MainPlugin;
+import com.lith.lithcore.abstractClasses.MainPlugin;
 
 public class Plugin extends MainPlugin<ConfigManager> {
     public static Plugin plugin;
