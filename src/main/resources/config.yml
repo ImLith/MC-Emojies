@@ -1,3 +1,6 @@
+# Supports colors like &1. Full list here: https://htmlcolorcodes.com/minecraft-color-codes/
+# Supports unicodes. Including custom. Write \\uXXXX and it will parse it
+
 emojies:
   flag_en:
     text: ":flag_en:"
