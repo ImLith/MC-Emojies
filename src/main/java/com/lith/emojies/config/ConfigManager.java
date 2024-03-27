@@ -2,11 +2,11 @@ package com.lith.emojies.config;
 
 import java.util.HashMap;
 import java.util.Map;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import com.lith.emojies.Static;
 import com.lith.lithcore.abstractClasses.MainPlugin;
 import com.lith.lithcore.abstractClasses.PluginConfigManager;
+import com.lith.lithcore.utils.StringUtil;
 
 public class ConfigManager extends PluginConfigManager {
     private Map<String, String> emojies;
@@ -42,12 +42,7 @@ public class ConfigManager extends PluginConfigManager {
             if (text == null || emoji == null)
                 continue;
 
-            if (emoji.startsWith("\\u"))
-                emoji = Character.toString((char) Integer.parseInt(emoji.substring(2), 16));
-            else
-                emoji = ChatColor.translateAlternateColorCodes('&', emoji + "&r");
-
-            this.emojies.put(text, emoji);
+            this.emojies.put(text, StringUtil.addUnicodes(StringUtil.addColors(emoji)));
         }
     }
 }
