@@ -1,26 +1,15 @@
 package com.lith.emojies;
 
 import com.lith.emojies.config.ConfigManager;
-import com.lith.emojies.events.player.PlayerChat;
-import com.lith.lithcore.abstractClasses.MainPlugin;
+import com.lith.emojies.events.PlayerChatEvent;
+import com.lith.lithcore.abstractClasses.AbstractPlugin;
 
-public class Plugin extends MainPlugin<ConfigManager> {
+public class Plugin extends AbstractPlugin<Plugin, ConfigManager> {
     public static Plugin plugin;
+    public ConfigManager configs = new ConfigManager(this);
 
-    public void onEnable() {
-        Plugin.plugin = this;
-
-        new ConfigManager(this);
-        this.registerEvents();
-
-        Static.log.info("Plugin enabled");
-    }
-
-    public void onDisable() {
-        Static.log.info("Plugin disabled");
-    }
-
-    private void registerEvents() {
-        this.getServer().getPluginManager().registerEvents(new PlayerChat(), this);
+    @Override
+    protected void registerEvents() {
+        registerEvent(new PlayerChatEvent(this));
     }
 }

@@ -3,22 +3,25 @@ package com.lith.emojies.config;
 import java.util.HashMap;
 import java.util.Map;
 import org.bukkit.configuration.ConfigurationSection;
+import com.lith.emojies.Plugin;
 import com.lith.emojies.Static;
-import com.lith.lithcore.abstractClasses.MainPlugin;
-import com.lith.lithcore.abstractClasses.PluginConfigManager;
+import com.lith.lithcore.abstractClasses.AbstractConfigManager;
 import com.lith.lithcore.utils.StringUtil;
+import lombok.Getter;
 
-public class ConfigManager extends PluginConfigManager {
+public class ConfigManager extends AbstractConfigManager<Plugin, ConfigManager> {
+    @Getter
     private Map<String, String> emojies;
 
-    public ConfigManager(final MainPlugin<ConfigManager> plugin) {
+    public ConfigManager(final Plugin plugin) {
         super(plugin);
-
-        this.getEmojiesFromConfig();
     }
 
-    public final Map<String, String> getEmojies() {
-        return this.emojies;
+    @Override
+    public void load() {
+        super.load();
+
+        this.getEmojiesFromConfig();
     }
 
     private void getEmojiesFromConfig() {
@@ -26,7 +29,7 @@ public class ConfigManager extends PluginConfigManager {
 
         ConfigurationSection emojiesSection = config.getConfigurationSection(Static.ConfigKeys.Emojis.MAIN);
         if (emojiesSection == null) {
-            Static.log.warning("Emojies not found in the config!");
+            plugin.log.warning("Emojies not found in the config!");
             return;
         }
 
