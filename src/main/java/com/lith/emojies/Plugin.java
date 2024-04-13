@@ -6,7 +6,12 @@ import com.lith.lithcore.abstractClasses.AbstractPlugin;
 
 public class Plugin extends AbstractPlugin<Plugin, ConfigManager> {
     public static Plugin plugin;
-    public ConfigManager configs = new ConfigManager(this);
+
+    @Override
+    public void onEnable() {
+        configs = new ConfigManager(this);
+        super.onEnable();
+    }
 
     @Override
     protected void registerEvents() {

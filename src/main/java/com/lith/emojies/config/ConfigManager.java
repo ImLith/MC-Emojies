@@ -20,7 +20,6 @@ public class ConfigManager extends AbstractConfigManager<Plugin, ConfigManager> 
     @Override
     public void load() {
         super.load();
-
         this.getEmojiesFromConfig();
     }
 
