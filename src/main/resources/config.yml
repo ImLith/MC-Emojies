@@ -2,12 +2,15 @@
 # Supports unicodes. Including custom. Write \\uXXXX and it will parse it
 
 emojies:
+  heart:
+    text: "<3"
+    emoji: "&c❤&r"
   flag_en:
     text: ":flag_en:"
     emoji: '\uE106'
-  heart:
-    text: "<3"
-    emoji: "&c❤"
   smile:
-    text: ":)"
-    emoji: "☺"
+    text:
+      - ":)"
+      - ":}"
+      - ":]"
+    emoji: "&6☺&r"
