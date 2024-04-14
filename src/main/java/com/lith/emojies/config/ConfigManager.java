@@ -35,7 +35,7 @@ public class ConfigManager extends AbstractConfigManager<Plugin, ConfigManager> 
         }
 
         for (String emojieKey : emojiesSection.getKeys(false)) {
-            final Object key = getObject(getEmojieTextKey(emojieKey));
+            final Object key = config.get(getEmojieTextKey(emojieKey));
             if (key == null)
                 continue;
 
