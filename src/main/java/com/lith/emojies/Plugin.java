@@ -9,12 +9,13 @@ public class Plugin extends AbstractPlugin<Plugin, ConfigManager> {
 
     @Override
     public void onEnable() {
+        plugin = this;
         configs = new ConfigManager(this);
         super.onEnable();
     }
 
     @Override
     protected void registerEvents() {
-        registerEvent(new PlayerChatEvent(this));
+        registerEvent(new PlayerChatEvent());
     }
 }
