@@ -1,19 +1,25 @@
 package com.lith.emojies;
 
-import java.util.logging.Logger;
-
-public class Static {
-    public static final String pluginName = "Emojies";
-    public static final Logger log = Logger.getLogger(Static.pluginName);
-
-    public static class ConfigKeys {
-        public static class Emojis {
+public final class Static {
+    public final static class ConfigKeys {
+        public final static class Emojis {
             public static final String MAIN = "emojies";
 
-            public static class Inner {
+            public final static class Inner {
                 public static final String TEXT = "text";
                 public static final String EMOJI = "emoji";
             }
+        }
+    }
+
+    public final static class Commands {
+        public final static class Name {
+            public final static String RELOAD = "emojiesReload";
+        }
+
+        public final static class Permission {
+            private final static String PREFIX = "emojies.";
+            public final static String RELOAD = PREFIX + "reload";
         }
     }
 }
