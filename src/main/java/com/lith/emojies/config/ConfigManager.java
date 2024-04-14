@@ -55,6 +55,8 @@ public class ConfigManager extends AbstractConfigManager<Plugin, ConfigManager> 
 
             this.emojies.put(keyPattern, emojie);
         }
+
+        plugin.log.info("Loaded " + this.emojies.size() + " emojies!");
     }
 
     private Pattern createPatternFromKey(String key) {

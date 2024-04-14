@@ -10,3 +10,14 @@ website: https://github.com/ImLith/MC-Emojies
 
 depend: [LithCore]
 softdepend: []
+
+commands:
+  emojiesReload:
+    description: Reload emojies configs
+    usage: /<command>
+    permission: emojies.reload
+
+permissions:
+  emojies.reload:
+    description: Reload emojies configs
+    default: op
